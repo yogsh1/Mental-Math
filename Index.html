@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Math Trainer</title>
+
+    <style>
+      body {
+        /* background-color: rgb(84, 84, 84); */
+        font-family: sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      #question {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      input {
+        font-size: 1.5rem;
+        padding: 10px;
+        width: 185px;
+        text-align: center;
+      }
+      button {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #message {
+        margin-top: 20px;
+        font-size: 5rem;
+        height: 30px;
+      }
+      #show-correct-answer{
+        margin-top: 80px;
+        font-size: 5rem;
+      }
+      #Game-Rounds{
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-weight: 600;
+      }
+      #settings{
+        margin: 20px;
+        font-size: 25px;
+      }
+      .game-box{
+        border: 2px solid gray;
+        border-radius: 10px;
+      }
+      .game-heading h1{
+        background-color: aqua;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-box">
+      <div class="game-heading">
+        <h1>Mental Math Trainer</h1>
+      </div>
+    <div id="Game-Rounds">
+      <label>Rounds</label>
+      <select id="Number-of-rounds" onchange="resetGame()">
+        <!-- <option value="0">Free Fall</option> -->
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+      </select>
+    </div>
+    <div id="settings">
+      <select id="digits-1" onchange="newQuestion()">
+        <option value="1">1 Digit (0-9)</option>
+        <option value="2">2 Digits (10-99)</option>
+        <option value="3">3 Digits (100-999)</option>
+      </select>
+      <select id="digits-2" onchange="newQuestion()">
+        <option value="1">1 Digit (0-9)</option>
+        <option value="2">2 Digit (10-99)</option>
+        <option value="3">3 Digit (100-999)</option>
+      </select>
+    </div>
+    <div id="quesRightCount">Question: 1 / 10 </div>
+    <div id="score">Score: Start Nahi hua</div>
+    <div id="question">Loading...</div>
+    <input type="number" id="user-answer" placeholder="enter a number" />
+    <button id="check-btn">Check</button>
+    <div id="message">Message</div>
+    <div id="show-correct-answer">Correct Answer</div>
+    <script src="script.js"></script>
+
+    </div>
+  </body>
+</html>
